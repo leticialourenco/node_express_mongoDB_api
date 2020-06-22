@@ -14,4 +14,10 @@ mongoose
 
 const db = mongoose.connection
 
+// allow server to handle json
+app.use(express.json())
+
+const subscribersRouter = require('./routes/subscribers')
+app.use('/subscribers', subscribersRouter)
+
 app.listen(3000, () => console.log('Server running'))
